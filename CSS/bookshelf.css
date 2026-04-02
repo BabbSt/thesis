@@ -1,0 +1,36 @@
+.shelf{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1.5em;
+    row-gap: 2em;
+    /*background-color: black;*/
+    column-rule: solid blue;
+    
+}
+
+
+.book{
+    /*padding: 2em 1em;*/
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    width: 8em;
+    height: 12em;
+    background-color: grey;
+    word-wrap: break-word;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+
+.underline{
+    background-color: black;
+    height: 1.5em;
+    width: 100vw;
+}
+
+button{display: flex;
+align-items: center;
+justify-content: center;
+column-gap: 0.5em;}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookshelf</title>
+    <link rel="stylesheet" href="./CSS/bookshelf.css" media="screen">
+    <link rel="stylesheet" href="./CSS/index.css" media="screen">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <h1>Bookshelf</h1>
+    </header>
+    <main>
+        <section id="myShelf">
+            <h2>Your books</h2>
+            <button type="button" onclick="document.location='./newBook.html'">Add <span aria-hidden="true" class="material-symbols-outlined">add</span></button>
+            <ul class="shelf">
+                <!--<button class="book">Smith family recipes</button>-->
+                <li><button class="book" onclick="document.location='./tableOfContents.html'">
+                    Smith Family Recipes
+                </button></li>
+                <li><button class="book">
+                    Musings with the Kookybaker
+                </button></li>
+                <li><button class="book">
+                    Smith Family Recipes
+                </button></li>
+                <li><button class="book">
+                    Musings with the Kookybaker
+                </button></li>
+                <li><button class="book">
+                    Smith Family Recipes
+                </button></li>
+                <li><button class="book">
+                    Musings with the Kookybaker
+                </button></li>
+                <li><button class="book">
+                    Smith Family Recipes
+                </button></li>
+                <li><button class="book">
+                    Musings with the Kookybaker
+                </button></li>
+                <li><button class="book">
+                    Smith Family Recipes
+                </button></li>
+                <li><button class="book">
+                    Musings with the Kookybaker
+                </button></li>
+                <li><button class="book">
+                    Smith Family Recipes
+                </button></li>
+                <li><button class="book">
+                    Musings with the Kookybaker
+                </button></li>
+            </ul>
+            <div class="underline"></div>
+        </section>
+        <section id="shared">
+            <h2>Shared with you</h2>
+            <ul class="shelf">
+                <li><button class="book">
+                    <!--<p>Nerdy Nummies</p>
+                    <p>Rosanna Pansino</p>-->
+                    Nerdy Nummies <br> By: Rosanna Pansino
+                </button></li>
+                <li><button class="book">
+                    Cordially Invited <br> By: Zoe Sugg
+                </button></li>
+                <li><button class="book">
+                    Dillicious Recipes <br> By: Stu Pickles
+                </button></li>
+            </ul>
+            <div class="underline"></div>
+        </section>
+    </main>    
+</body>
+</html>

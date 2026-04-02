@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="JavaScript/recipe.js" charset="utf-8" defer></script>
+    <link rel="stylesheet" href="./CSS/style.css" media="screen">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <h1>Recipe title</h1>
+        <button class="toggleNav"><span class="material-symbols-outlined">menu</span></button>
+        <nav id="bookNav">
+            <!--Ask about semantics of link then header then more links-->
+            <button class="toggleNav"><span class="material-symbols-outlined">menu</span></button>
+            <a href="./bookshelf.html"><span aria-hidden="true" class="material-symbols-outlined">newsstand</span>Bookshelf</a>
+            <h2>Book Title</h2>
+            <ul>
+                <li><a href="./tableOfContents.html">Table of Contents</a></li>
+                <li>
+                    <!--Ask what this should be semantically if it only expands the menu-->
+                    <a>Mom's Recipes<span aria-hidden="true" class="material-symbols-outlined">keyboard_arrow_down</span></a>
+                    <ul>
+                        <li><a>Noodle Kugel</a></li>
+                        <li><a>Blintz Loaf</a></li>
+                        <li><a>Nanaimo Bars</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Grandma Rose's Recipes<span aria-hidden="true" class="material-symbols-outlined">keyboard_arrow_down</span></a>
+                    <ul>
+                        <li><a>Friendship Salad</a></li>
+                        <li><a>Sweet and Sour Chicken</a></li>
+                        <li><a>Sour Cream Blueberry Coffee Cake</a></li>
+                        <li><a>Lemon Glazed Cake</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Description</h2>
+        <p>This makes your house smell so heavenly! It is a great brunch item.</p>
+        <section>
+            <h2>Ingredients</h2>
+            <ul>
+                <li>1 ½ sticks of butter, softened</li>
+                <li>1 ½ cups sugar</li>
+                <li>2 eggs</li>
+                <li>1 cup sour cream</li>
+                <li>1 tsp. vanilla</li>
+                <li>1 5/8 cup flour</li>
+                <li>1 tsp. baking powder</li>
+                <li>¼ tsp. salt</li>
+                <li>1 ½ cups blueberries - coated in flour</li>
+                <li>½ cup brown sugar, packed</li>
+                <li>1 tsp. cinnamon</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Directions</h2>
+            <ol>
+                <li>Grease a 13x9 pan</li>
+                <li>Cream butter and sugar</li>
+                <li>Add eggs, one at a time</li>
+                <li>Mix in sour cream and vanilla</li>
+                <li>In a separate bowl, combine flour, baking powder, and salt</li>
+                <li>Add flour mixture to the other bowl.</li>
+                <li>Gently fold in the blueberries</li>
+                <li>Spread mixture into the 13x9 pan</li>
+                <li>In a small bowl, combine the brown sugar and cinnamon, then sprinkle over the top of the batter</li>
+                <li>Bake at 350 degrees for 40 minutes or until toothpick inserted in middle comes out clean</li>
+            </ol>
+        </section>
+    </main>
+</body>
+</html>

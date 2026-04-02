@@ -1,0 +1,27 @@
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    width: 100vw;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "topLeft topRight"
+    "bottomLeft bottomRight";
+}
+
+.tlItem{grid-area: topLeft;}
+.trItem{grid-area: topRight;}
+.blItem{grid-area: bottomLeft;}
+.brItem{grid-area: bottomRight;}
+
+@media screen 
+and (max-width: 640px){
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "topLeft"
+        "topRight"
+        "bottomLeft"
+        "bottomRight";
+    }
+}

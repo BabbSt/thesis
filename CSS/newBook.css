@@ -1,0 +1,27 @@
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    width: 100vw;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "title cover"
+    "fonts fontPrev";
+}
+
+#bookInput{grid-area: title;}
+#coverPreview{grid-area: cover;}
+#fontsInput{grid-area: fonts;}
+#fontsPreview{grid-area: fontPrev;}
+
+@media screen 
+and (max-width: 640px){
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "title"
+        "cover"
+        "fonts"
+        "fontPrev";
+    }
+}

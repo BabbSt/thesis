@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Recipe</title>
+    <link rel="stylesheet" href="./CSS/newRecipe.css" media="screen">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <h1>New Recipe</h1>
+    </header>
+    <main>
+        <form id="new_recipe" method="post">
+            <section class="container">
+                <p class="tlItem">
+                    <label for="book">Book</label>
+                    <select id="book" name="book">
+                        <option>Easy Eats</option>
+                        <option>Smith Family Recipes</option>
+                        <option>Musings with the Kookybaker</option>
+                    </select>
+                </p>
+                <p class="blItem">
+                    <label for="section">Section</label>
+                    <select id="section" name="section">
+                        <option>Desserts</option>
+                    </select>
+                </p>
+                <p class="trItem">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title">
+                </p>
+                <p id="brItem">
+                    <label for="tags">Tags</label>
+                    <input type="text" id="tags" name="tags">
+                </p>
+            </section>
+            <section id="imageUpload">
+                <h2>Image</h2>
+                <label for="image">Upload image(s) you want to appear at the top of the recipe</label>
+                <input type="file" id="image" name="image" multiple accept="image/jpeg, image/png, image/webp">
+            </section>
+            <section id="descriptionInput">
+                <label for="description">Description</label>
+                <textarea id="description" name="description" rows="6" cols="100"></textarea>
+            </section>
+            <section>
+                <h2>Details</h2>
+                <div class="container">
+                    <p class="tlItem">
+                        <label for="servings">Number of Servings</label>
+                        <input type="text" id="servings" name="servings">
+                    </p>
+                    <p class="trItem">
+                        <label for="per_serving">Amount per Serving</label>
+                        <input type="text" id="per_serving" name="per_serving">
+                    </p>
+                    <p class="blItem">
+                        <label for="prep_time">Prep Time</label>
+                        <input type="text" id="prep_time" name="prep_time">
+                    </p>
+                    <p class="brItem">
+                        <label for="cook_time">Cook Time</label>
+                        <input type="text" id="cook_time" name="cook_time">
+                    </p>
+                </div>
+            </section>
+            <section>
+                <h2>Ingredients</h2>
+                <label for="amount1">Amount</label>
+                <input type="text" id="amount1" name="amount1">
+                <label for="unit1">Unit</label>
+                <input type="text" id="unit1" name="unit1">
+                <label for="ingredient1">Ingredient</label>
+                <input type="text" id="ingredient1" name="ingredient1">
+                <label for="note1">Note</label>
+                <input type="text" id="note1" name="note1">
+                <button>Add</button>
+            </section>
+            <section>
+                <h2>Directions</h2>
+                <label for="step1">Step 1</label>
+                <input type="text" id="step1" name="step1">
+                <button>Add</button>
+            </section>
+            <label for="comments">Closing Comments</label>
+            <textarea id="comments" name="comments" rows="6" cols="100"></textarea>
+            <button type="button" onclick="document.location='./newTOC.html'">Cancel</button>
+            <button type="submit" formaction="./newTOC.html">Submit</button>
+        </form>
+    </main>
+</body>
+</html>

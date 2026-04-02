@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Book</title>
+    <script src="JavaScript/newBook.js" charset="utf-8" defer></script>
+    <link rel="stylesheet" href="./CSS/newBook.css" media="screen">
+</head>
+<body>
+    <header>
+        <h1>New Book</h1>
+    </header>
+    <main>
+        <form id="new_book" method="post">
+            <div class="container">
+                <section id="bookInput">
+                    <p id="titleInput">
+                        <label for="title">Title:</label>
+                        <input type="text" id="title" name="title" />
+                    </p>
+                    <p id="subtitleInput">
+                        <label for="subtitle">Subtitle:</label>
+                        <input type="text" id="subtitle" name="subtitle" />
+                    </p>
+                    <p id="authorInput">
+                        <label for="include_author">Include author</label>
+                        <input type="checkbox" id="include_author" name="include_author">
+                        <label for="author">Author:</label>
+                        <input type="text" id="author" name="author" disabled/>
+                    </p>
+                </section>
+                <section id="coverPreview">
+                    <h2>Cover Preview</h2>
+                </section>
+                <section id="fontsInput">
+                    <h2>Fonts</h2>
+                    <p>
+                        <label for="title_font">Titles</label>
+                        <select id="title_font" name="title_font" class="optionsWrapper">
+                        </select>
+                    </p>
+                    <p>
+                        <label for="heading_font">Headings</label>
+                        <select id="heading_font" name="heading_font" class="optionsWrapper"></select>
+                    </p>
+                    <p>
+                        <label for="body_font">Body</label>
+                        <select id="body_font" name="body_font" class="optionsWrapper"></select>
+                    </p>
+                </section>
+                <section id = "fontsPreview">
+                    <h2>Font Preview</h2>
+                    <p id="titlePrev">Recipe Title</p>
+                    <p id="headerPrev">Ingredients</p>
+                    <p id="bodyPrev">1/4 cup sugar</p>
+                </section>
+            </div>
+            <button type="button" onclick="document.location='./bookshelf.html'">Cancel</button>
+            <button type="submit" formaction="./newTOC.html">Submit</button>
+        </form>
+    </main>
+</body>
+</html>
