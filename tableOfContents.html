@@ -16,30 +16,32 @@
     </header>
     <main>
         <h2>Table of Contents</h2>
-        <input type="text" placeholder="Search">
-        <!--Ask about right way to do this semantically-->
-        <menu>
-            <li><button>Edit Cover</button></li>
-            <li><button>Edit Content</button></li>
-            <li><button command="show-modal" commandfor="shareModal">Share</button></li>
+        <button type="button" id="toggleMenu" popovertarget="menu"><span class="material-symbols-outlined">more_horiz</span></button>
+        <menu id="menu" popover>
+            <li><button class="iconButton">Edit Cover <span aria-hidden="true" class="material-symbols-outlined">book_2</span></button></li>
+            <li><button class="iconButton">Edit Content <span aria-hidden="true" class="material-symbols-outlined">edit_note</span></button></li>
+            <li><button class="iconButton" command="show-modal" commandfor="shareModal">Share <span aria-hidden="true" class="material-symbols-outlined">upload</span></button></li>
         </menu>
-        <section>
-            <h3>Mom's Recipes</h3>
-            <ul>
-                <li>Noodle Kugel</li>
-                <li>Blintz Loaf</li>
-                <li>Nanaimo Bars</li>
-            </ul>
-        </section>
-        <section>
-            <h3>Grandma Rose's Recipes</h3>
-            <ul>
-                <li>Friendship Salad</li>
-                <li>Sweet and Sour Chicken</li>
-                <li><a href="./recipe.html">Sour Cream Blueberry Coffee Cake</a></li>
-                <li>Lemon Glazed Cake</li>
-            </ul>
-        </section>
+        <search>
+            <input type="search" placeholder="Search">
+            <section>
+                <h3>Mom's Recipes</h3>
+                <ul>
+                    <li>Noodle Kugel</li>
+                    <li>Blintz Loaf</li>
+                    <li>Nanaimo Bars</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Grandma Rose's Recipes</h3>
+                <ul>
+                    <li>Friendship Salad</li>
+                    <li>Sweet and Sour Chicken</li>
+                    <li><a href="./recipe.html">Sour Cream Blueberry Coffee Cake</a></li>
+                    <li>Lemon Glazed Cake</li>
+                </ul>
+            </section>
+        </search>
         <dialog id="shareModal">
             <h3>Share Smith Family Recipes</h3>
             <fieldset>

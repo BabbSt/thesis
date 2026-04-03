@@ -25,3 +25,11 @@ and (max-width: 640px){
         "fontPrev";
     }
 }
+
+#titlePrev{
+    font-size: 2em;
+}
+
+#headerPrev{
+    font-size: 1.5em;
+}
