@@ -3,22 +3,15 @@ const shareDetailsModal = document.getElementById("shareDetailsModal");
 const confirmShare = document.getElementById("confirmShare");
 
 function openModal (modal){
-	modal.classList.remove("hidden");
-	//background.classList.remove('hidden');
+	modal.showModal();
 }
 
 function closeModal (modal){
-	modal.classList.add('hidden');
-	//background.classList.add('hidden');
+	modal.close();
     //clear values
 }
 
 //const account = document.getElementsByClassName("account_btn");
-
-const shareLink = document.getElementById("shareLink");
-shareLink.addEventListener("click",()=>{
-    openModal(shareModal);
-});
 
 const susanButton = document.getElementById("susan");
 susanButton.addEventListener("click",()=>{

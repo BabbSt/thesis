@@ -19,9 +19,9 @@
         <input type="text" placeholder="Search">
         <!--Ask about right way to do this semantically-->
         <menu>
-            <li>Edit Cover</li>
-            <li>Edit Content</li>
-            <li id="shareLink">Share</li>
+            <li><button>Edit Cover</button></li>
+            <li><button>Edit Content</button></li>
+            <li><button command="show-modal" commandfor="shareModal">Share</button></li>
         </menu>
         <section>
             <h3>Mom's Recipes</h3>
@@ -40,7 +40,7 @@
                 <li>Lemon Glazed Cake</li>
             </ul>
         </section>
-        <div id="shareModal" class="hidden">
+        <dialog id="shareModal">
             <h3>Share Smith Family Recipes</h3>
             <fieldset>
                 <legend>Access</legend>
@@ -75,8 +75,8 @@
                 Carly
             </button>
             <button type="button">Copy Link <span aria-hidden="true" class="material-symbols-outlined">link_2</span></button>
-        </div>
-        <div id="shareDetailsModal" class="hidden">
+        </dialog>
+        <dialog id="shareDetailsModal">
             <form>
                 <h3>Share Smith Family Recipes</h3>
                 <p>With</p>
@@ -90,14 +90,14 @@
                 <textarea id="shareMessage" name="shareMessage"></textarea>
                 <button type="button" id="submitShare">Share <span aria-hidden="true" class="material-symbols-outlined">send</span></button>
             </form> 
-        </div>
-        <div id="confirmShare" class="hidden">
+        </dialog>
+        <dialog id="confirmShare">
             <img class="account_img" src="./Images/SIcon.png">
             <p>Susan</p>
             <p>can now edit</p>
             <p>Smith Family Recipes</p>
             <button type="button" id="doneSharing">Done</button>
-        </div>
+        </dialog>
     </main>
 </body>
 </html>
