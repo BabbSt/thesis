@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sour Cream Blueberry Coffee Cake</title>
     <script src="JavaScript/recipe.js" charset="utf-8" defer></script>
     <link rel="stylesheet" href="./CSS/style.css" media="screen">
+    <link rel="stylesheet" href="./CSS/recipe.css" media="screen">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
 <body>
     <header>
-        <h1>Recipe title</h1>
+        <h1>Sour Cream Blueberry Coffee Cake</h1>
         <button class="toggleNav"><span class="material-symbols-outlined">menu</span></button>
-        <nav id="bookNav">
-            <!--Ask about semantics of link then header then more links-->
+    </header>
+    <nav id="bookNav">
             <button class="toggleNav"><span class="material-symbols-outlined">menu</span></button>
             <a href="./bookshelf.html"><span aria-hidden="true" class="material-symbols-outlined">newsstand</span>Bookshelf</a>
-            <h2>Book Title</h2>
+            <h2>Smith Family Recipes</h2>
             <ul>
                 <li><a href="./tableOfContents.html">Table of Contents</a></li>
                 <li>
-                    <!--Ask what this should be semantically if it only expands the menu-->
                     <details>
                         <summary>Mom's Recipes</summary>
                         <ul>
@@ -43,12 +43,32 @@
                 </li>
             </ul>
         </nav>
-    </header>
     <main>
+        <figure>
+            <img src="Images/Coffee Cake.jpg" alt="plated squares of blueberry coffee cake">
+        </figure>
         <h2>Description</h2>
         <p>This makes your house smell so heavenly! It is a great brunch item.</p>
         <section>
             <h2>Ingredients</h2>
+            <!-- <fieldset id="servings">
+                <legend>Servings</legend>
+                <ul id="servingsList">
+                    <li>
+                        <input type="radio" id="half" name="serving">
+                        <label for="half" id="halfLabel">1/2</label>
+                    </li>
+                    <li>
+                        
+                        <input type="radio" id="one" name="serving" checked>
+                        <label for="one">1</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="double" name="serving">
+                        <label for="double">2</label>
+                    </li>
+                </ul>
+            </fieldset> for later implimentation of servings-->
             <ul>
                 <li>1 ½ sticks of butter, softened</li>
                 <li>1 ½ cups sugar</li>

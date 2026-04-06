@@ -1,26 +1,34 @@
-.hidden{
-    display: none;
-}
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:ital,opsz@0,14..32;1,14..32&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
 /*button{display: flex;
 align-items: center;
 justify-content: center;}*/
-nav{
-    background-color: aqua;
-    position: fixed;
-    top:0;
-    left: -100%;
-    height: 100vh;
-    width: 20 em;
-    transition: all 0.4s;
-}
-nav.open{
-    left:0;
+
+header h1{
+    text-align: center;
 }
 
-#results{
-    background-color: antiquewhite;
+body{
+    background-color: #FAFAF8;
+    color: #272727;
+    font-family: 'Inter';
 }
+
+h1{
+    font-family: 'DM Serif Display', serif;
+    font-weight: 400;
+}
+
+h2,h3,h4{
+    font-family: 'Plus Jakarta Sans';
+    font-weight: 600;
+}
+
+
+/*.test{
+    max-width: 960px;
+    margin: 0 auto;
+}*/
 
 #toggleMenu{
     position: absolute;
@@ -49,3 +57,38 @@ nav.open{
     justify-content: center;
     column-gap: 0.5em;
 }
+
+/*#servingsList{
+    padding: 0;
+    display: inline-flex;
+    gap: 0.1em;
+}
+
+#servingsList input{
+    display: none;
+}
+
+#servingsList label{
+    border: 0.1em black solid;
+}
+
+#servingsList label:not(#halfLabel){
+    padding: 0.5em 1em;
+}
+
+#halfLabel{
+    padding: 0.5em 0.65em;
+}
+
+#servingsList input:checked + label{
+    background-color: black;
+    color: white;
+}
+
+#servingsList li{
+    list-style: none
+}
+
+#servings{
+    border: none;
+} for later implimentation of servings*/
