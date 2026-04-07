@@ -1,12 +1,19 @@
 nav{
-    background-color: aqua;
+    background-color: #FAFAF8;
     position: fixed;
     top:0;
     left: -100%;
-    height: 100vh;
+    height: 100%;
     width: 20 em;
     transition: all 0.4s;
+    border-right: 1px solid #272727;
 }
 nav.open{
     left:0;
+}
+
+.toggleNav{
+    position: absolute;
+    top:5px;
+    left: 8px;
 }
