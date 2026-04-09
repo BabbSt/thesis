@@ -1,3 +1,27 @@
 #results{
     background-color: antiquewhite;
 }
+
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+li{
+    font-size: 32px;
+    font-weight: 500;
+}
+
+#bookshelfLink{
+    font-size: 32px;
+    position: absolute;
+    top:26px;
+    left: 21px;
+}
+
+.iconLink{
+    width: 100%;
+    justify-content: space-between;
+}

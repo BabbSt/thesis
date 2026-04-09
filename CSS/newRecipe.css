@@ -1,5 +1,5 @@
 .container{
-    max-width: 1200px;
+    max-width: 960px;
     margin: 0 auto;
     display: grid;
     width: 100vw;
@@ -13,6 +13,10 @@
 .trItem{grid-area: topRight;}
 .blItem{grid-area: bottomLeft;}
 .brItem{grid-area: bottomRight;}
+
+button{
+    margin-top: 32px;
+}
 
 @media screen 
 and (max-width: 640px){

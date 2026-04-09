@@ -1,9 +1,11 @@
 .container{
-    max-width: 1200px;
+    max-width: 960px;
+    height: 100%;
     margin: 0 auto;
     display: grid;
     width: 100vw;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
     grid-template-areas: 
     "title cover"
     "fonts fontPrev";
@@ -33,3 +35,43 @@ and (max-width: 640px){
 #headerPrev{
     font-size: 1.5em;
 }
+
+.previewBkgd{
+    width: 100%;
+    background-color: white;
+    border: 1px solid #4A4A4A;
+    border-radius: 8px;
+}
+
+.bookPrev{
+    font-size: 16px;
+    width: 184px;
+    height: 272px;
+    background-color: #D9D9D9;
+    word-wrap: break-word;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    box-shadow: 6px 6px 4px rgb(0 0 0 / 25%);
+    margin: 56px 140px;
+    position: relative;
+}
+
+#fontsPreview p{
+    margin-left: 50px;
+}
+
+#bodyPrev{
+    margin-bottom: 56px;
+}
+
+button{
+    margin-top: 32px;
+}
+
+/*.spine{
+    position: relative;
+    right: 82px;
+}*/

@@ -2,18 +2,86 @@ nav{
     background-color: #FAFAF8;
     position: fixed;
     top:0;
-    left: -100%;
+    left: -180%;
     height: 100%;
-    width: 20 em;
-    transition: all 0.4s;
+    width: 20em;
+    max-width: 100%;
+    transition: all 0.3s;
     border-right: 1px solid #272727;
+    z-index: 1010;
 }
 nav.open{
     left:0;
 }
 
+.navContent{
+    padding: 1em 2em;
+    overflow-y: auto;
+    max-height: 100%;
+    overscroll-behavior: contain;
+}
+
+#navBackdrop{
+    position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+nav ul{
+    list-style: none;
+}
+nav li{
+    margin-bottom: 16px;
+}
+
+nav h2{
+    font-size: 40px;
+    font-weight: 700;
+}
+
+nav h3{
+    font-weight: 600;
+}
+
 .toggleNav{
     position: absolute;
+    top: 16px;
+    left: 24px;
+}
+
+#bookshelfLink{
+    font-size: 40px;
+    font-weight: 600;
+    position: relative;
+    top:16px;
+    width: fit-content;
+}
+
+summary{
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.closeNav{
+    position: absolute;
     top:5px;
-    left: 8px;
+    right: 0px;
+    justify-self: end;
+    padding-right: 2px;
+}
+
+img{
+    max-width: 100%;
+    max-height: 500px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main li{
+    margin-bottom: 1em;
 }

@@ -33,6 +33,12 @@
                 </section>
                 <section id="coverPreview">
                     <h2>Cover Preview</h2>
+                    <div class="previewBkgd">
+                        <div class="bookPrev">
+                            <div class="spine"></div>
+                        </div>
+                    </div>
+                    <button type="button">Edit</button>
                 </section>
                 <section id="fontsInput">
                     <h2>Fonts</h2>
@@ -52,13 +58,17 @@
                 </section>
                 <section id = "fontsPreview">
                     <h2>Font Preview</h2>
+                    <div class="previewBkgd">
                     <p id="titlePrev">Recipe Title</p>
                     <p id="headerPrev">Ingredients</p>
                     <p id="bodyPrev">1/4 cup sugar</p>
+                    </div>
                 </section>
             </div>
+            <div class="frmSubCan">
             <button type="button" class="invertedButton" onclick="document.location='./bookshelf.html'">Cancel</button>
             <button type="submit" formaction="./newTOC.html">Submit</button>
+            </div>
         </form>
     </main>
 </body>

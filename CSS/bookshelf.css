@@ -2,25 +2,34 @@
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    column-gap: 1.5em;
+    column-gap: 48px;
     row-gap: 2em;
+    padding: 0;
 }
 
 
 .book{
     /*padding: 2em 1em;*/
     font-size: 16px;
-    width: 197px;
+    width: 184px;
     height: 272px;
-    background-color: grey;
     word-wrap: break-word;
     text-align: center;
     display: flex;
     align-items: center;
+    justify-content: center;
     border-radius: 4px;
+    box-shadow: 6px 6px 4px rgb(0 0 0 / 25%);
+    position: relative;
 }
 
-button{display: flex;
-align-items: center;
-justify-content: center;
-column-gap: 0.5em;}
+#yourBookHeading{
+    display: flex;
+    height: fit-content;
+    gap: 24px;
+    margin-bottom: 26px;
+}
+
+#yourBookHeading h2{
+    margin: 0;
+}

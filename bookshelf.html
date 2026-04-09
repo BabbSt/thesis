@@ -13,38 +13,49 @@
         <h1>Bookshelf</h1>
     </header>
     <main>
+        <div class="test">
         <button type="button" id="toggleMenu" popovertarget="menu" class="menuButton"><span class="material-symbols-outlined">more_horiz</span></button>
         <menu id="menu" popover>
-            <li><button class="iconButton">Account <span aria-hidden="true" class="material-symbols-outlined">account_circle</span></button></li>
-            <li><button class="iconButton">Edit Bookshelf <span aria-hidden="true" class="material-symbols-outlined">edit</span></button></li>
+            <li><button class="menuButton popoverButton">Account <span aria-hidden="true" class="material-symbols-outlined">account_circle</span></button></li>
+            <li><button class="menuButton popoverButton">Edit Bookshelf <span aria-hidden="true" class="material-symbols-outlined">edit</span></button></li>
         </menu>
         <section id="myShelf">
+            <div id="yourBookHeading">
             <h2>Your books</h2>
             <button type="button" onclick="document.location='./newBook.html'" class="iconButton">Add <span aria-hidden="true" class="material-symbols-outlined">add</span></button>
+            </div>
             <ul class="shelf">
                 <!--<button class="book">Smith family recipes</button>-->
                 <li><button class="book" onclick="document.location='./tableOfContents.html'">
+                    <span aria-hidden="true" class="spine"></span>
                     Smith Family Recipes
                 </button></li>
                 <li><button class="book">
+                    <span aria-hidden="true" class="spine"></span>
                     Musings with the Kookybaker
                 </button></li>
                 <li><button class="book">
+                    <span aria-hidden="true" class="spine"></span>
                     Smith Family Recipes
                 </button></li>
                 <li><button class="book">
+                    <span aria-hidden="true" class="spine"></span>
                     Musings with the Kookybaker
                 </button></li>
                 <li><button class="book">
+                    <span aria-hidden="true" class="spine"></span>
                     Smith Family Recipes
                 </button></li>
                 <li><button class="book">
+                    <span aria-hidden="true" class="spine"></span>
                     Musings with the Kookybaker
                 </button></li>
                 <li><button class="book">
+                    <span aria-hidden="true" class="spine"></span>
                     Smith Family Recipes
                 </button></li>
                 <li><button class="book">
+                    <span aria-hidden="true" class="spine"></span>
                     Musings with the Kookybaker
                 </button></li>
             </ul>
@@ -53,18 +64,20 @@
             <h2>Shared with you</h2>
             <ul class="shelf">
                 <li><button class="book">
-                    <!--<p>Nerdy Nummies</p>
-                    <p>Rosanna Pansino</p>-->
+                    <span aria-hidden="true" class="spine"></span>
                     Nerdy Nummies <br> By: Rosanna Pansino
                 </button></li>
                 <li><button class="book">
+                    <span aria-hidden="true" class="spine"></span>
                     Cordially Invited <br> By: Zoe Sugg
                 </button></li>
                 <li><button class="book">
+                    <span aria-hidden="true" class="spine"></span>
                     Dillicious Recipes <br> By: Stu Pickles
                 </button></li>
             </ul>
         </section>
+        </div>
     </main>    
 </body>
 </html>
