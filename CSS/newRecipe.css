@@ -24,7 +24,9 @@ button{
     max-width: 100%;
 }
 
-#ingredientInputs{
+.ingredientInputs{
+    background: none;
+    border: none;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -42,17 +44,17 @@ select{
     max-width: 100%;
 }
 
-#ingredientInputs label{
+.ingredientInputs label{
     font-family: 'Inter';
     font-size: 24px;
     font-weight: 400;
 }
 
-#ingredientInputs .shortInput{
+.ingredientInputs .shortInput{
     width:6em;
 }
 
-#ingredientInputs .medInput{
+.ingredientInputs .medInput{
     width:12em;
 }
 

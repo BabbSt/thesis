@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Recipe</title>
+    <script src="JavaScript/newRecipe.js" charset="utf-8" defer></script>
     <link rel="stylesheet" href="./CSS/style.css" media="screen">
     <link rel="stylesheet" href="./CSS/newRecipe.css" media="screen">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
@@ -70,7 +71,7 @@
             </section>
             <section>
                 <h2>Ingredients</h2>
-                <div id="ingredientInputs">
+                <fieldset class="ingredientInputs">
                     <div>
                         <input type="text" class="shortInput" id="amount1" name="amount1">
                         <label for="amount1">Amount</label>
@@ -87,17 +88,19 @@
                         <input type="text" class="medInput" id="note1" name="note1">
                         <label for="note1">Note</label>
                     </div>
-                </div>
+                </fieldset>
+                <div id="newIngredients"></div>
                 <div class="frmSubCan">
-                    <button>Add</button>
+                    <button type="button" id="addIngredientBtn">Add</button>
                 </div>
             </section>
             <section>
                 <h2>Directions</h2>
                 <label for="step1">Step 1</label>
                 <input class="longInput" type="text" id="step1" name="step1">
+                <div id="newDirections"></div>
                 <div class="frmSubCan">
-                    <button>Add</button>
+                    <button type="button" id="addDirectionBtn">Add</button>
                 </div>
             </section>
             <label for="comments">Closing Comments</label>
