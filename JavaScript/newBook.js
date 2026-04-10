@@ -2,8 +2,14 @@ const fontSelectors = document.querySelectorAll(".optionsWrapper");
 const titleFont = document.getElementById("titlePrev");
 const headerFont = document.getElementById("headerPrev");
 const bodyFont = document.getElementById("bodyPrev");
+
 const includeAuthorCheck = document.getElementById("include_author");
 const authorInput = document.getElementById("author");
+const titleInput = document.getElementById("title");
+const subtitleInput = document.getElementById("subtitle");
+const bookTitle = document.getElementById("bookTitlePrev");
+const bookSubtitle = document.getElementById("bookSubtitlePrev");
+
 let fonts= ['Arial', 'Times New Roman','Helvetica', 'Impact'];
 
 let fontsdropdown = fonts.map((font)=>{
@@ -34,3 +40,10 @@ includeAuthorCheck.addEventListener("input",()=>{
     console.log(authorInput);
 })
 
+titleInput.addEventListener("keyup",()=>{
+    bookTitle.textContent=titleInput.value;
+})
+
+subtitleInput.addEventListener("keyup",()=>{
+    bookSubtitle.textContent=subtitleInput.value;
+})
