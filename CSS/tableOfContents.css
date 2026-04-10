@@ -25,3 +25,8 @@ li{
     width: 100%;
     justify-content: space-between;
 }
+
+label[for="view"],
+label[for="edit"]{
+    display: inline;
+}

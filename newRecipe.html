@@ -45,7 +45,7 @@
             </section>
             <section id="descriptionInput">
                 <label for="description">Description</label>
-                <textarea id="description" name="description" rows="6" cols="100"></textarea>
+                <textarea class="longInput" id="description" name="description" rows="6" cols="100"></textarea>
             </section>
             <section>
                 <h2>Details</h2>
@@ -70,24 +70,38 @@
             </section>
             <section>
                 <h2>Ingredients</h2>
-                <label for="amount1">Amount</label>
-                <input type="text" id="amount1" name="amount1">
-                <label for="unit1">Unit</label>
-                <input type="text" id="unit1" name="unit1">
-                <label for="ingredient1">Ingredient</label>
-                <input type="text" id="ingredient1" name="ingredient1">
-                <label for="note1">Note</label>
-                <input type="text" id="note1" name="note1">
-                <button>Add</button>
+                <div id="ingredientInputs">
+                    <div>
+                        <input type="text" class="shortInput" id="amount1" name="amount1">
+                        <label for="amount1">Amount</label>
+                    </div>
+                    <div>
+                        <input type="text" class="shortInput" id="unit1" name="unit1">
+                        <label for="unit1">Unit</label>
+                    </div>
+                    <div>
+                        <input type="text" class="medInput" id="ingredient1" name="ingredient1">
+                        <label for="ingredient1">Ingredient</label>
+                    </div>
+                    <div>
+                        <input type="text" class="medInput" id="note1" name="note1">
+                        <label for="note1">Note</label>
+                    </div>
+                </div>
+                <div class="frmSubCan">
+                    <button>Add</button>
+                </div>
             </section>
             <section>
                 <h2>Directions</h2>
                 <label for="step1">Step 1</label>
-                <input type="text" id="step1" name="step1">
-                <button>Add</button>
+                <input class="longInput" type="text" id="step1" name="step1">
+                <div class="frmSubCan">
+                    <button>Add</button>
+                </div>
             </section>
             <label for="comments">Closing Comments</label>
-            <textarea id="comments" name="comments" rows="6" cols="100"></textarea>
+            <textarea class="longInput" id="comments" name="comments" rows="6" cols="100"></textarea>
             <div class="frmSubCan">
                 <button type="button" class="invertedButton" onclick="document.location='./newTOC.html'">Cancel</button>
                 <button type="submit" formaction="./newTOC.html">Submit</button>

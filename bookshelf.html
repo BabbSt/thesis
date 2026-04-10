@@ -25,8 +25,16 @@
             <button type="button" onclick="document.location='./newBook.html'" class="iconButton">Add <span aria-hidden="true" class="material-symbols-outlined">add</span></button>
             </div>
             <ul class="shelf">
-                <!--<button class="book">Smith family recipes</button>-->
-                <li><button class="book" onclick="document.location='./tableOfContents.html'">
+                <li><button id="smith-family-recipes" class="book" onclick="document.location='./tableOfContents.html'">
+                    <span aria-hidden="true" class="spine"></span>
+                    <span class="title">Smith Family Recipes</span>
+                </button></li>
+                <li><button id="musings-with-kookybaker" class="book">
+                    <span aria-hidden="true" class="spine"></span>
+                    Musings with the Kookybaker
+                    <img src="./Images/mom cake cropped.jpg" alt="author with a large oreo cake">
+                </button></li>
+               <!-- <li><button class="book">
                     <span aria-hidden="true" class="spine"></span>
                     Smith Family Recipes
                 </button></li>
@@ -49,15 +57,7 @@
                 <li><button class="book">
                     <span aria-hidden="true" class="spine"></span>
                     Musings with the Kookybaker
-                </button></li>
-                <li><button class="book">
-                    <span aria-hidden="true" class="spine"></span>
-                    Smith Family Recipes
-                </button></li>
-                <li><button class="book">
-                    <span aria-hidden="true" class="spine"></span>
-                    Musings with the Kookybaker
-                </button></li>
+                </button></li>-->
             </ul>
         </section>
         <section id="shared">
@@ -66,12 +66,14 @@
                 <li><button class="book">
                     <span aria-hidden="true" class="spine"></span>
                     Nerdy Nummies <br> By: Rosanna Pansino
+                    <img src="./Images/nerdy nummies.png">
                 </button></li>
-                <li><button class="book">
+                <li><button id="cordially-invited" class="book">
                     <span aria-hidden="true" class="spine"></span>
                     Cordially Invited <br> By: Zoe Sugg
+                    <img src="./Images/Zoe_.jpg">
                 </button></li>
-                <li><button class="book">
+                <li><button id="dillicious-recipes" class="book">
                     <span aria-hidden="true" class="spine"></span>
                     Dillicious Recipes <br> By: Stu Pickles
                 </button></li>

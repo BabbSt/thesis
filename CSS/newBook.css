@@ -3,7 +3,7 @@
     height: 100%;
     margin: 0 auto;
     display: grid;
-    width: 100vw;
+    width: 100%;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
     grid-template-areas: 
@@ -11,21 +11,20 @@
     "fonts fontPrev";
 }
 
-#bookInput{grid-area: title;}
+#bookInput{
+    grid-area: title;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin-top: 60px;
+}
 #coverPreview{grid-area: cover;}
 #fontsInput{grid-area: fonts;}
 #fontsPreview{grid-area: fontPrev;}
 
-@media screen 
-and (max-width: 640px){
-    .container{
-        grid-template-columns: 1fr;
-        grid-template-areas: 
-        "title"
-        "cover"
-        "fonts"
-        "fontPrev";
-    }
+input[type="text"], select{
+    width: 16em;
+    max-width: 100%;
 }
 
 #titlePrev{
@@ -41,6 +40,13 @@ and (max-width: 640px){
     background-color: white;
     border: 1px solid #4A4A4A;
     border-radius: 8px;
+    max-width: 600px;
+}
+
+#coverPreview .previewBkgd{
+    display: flex;
+    align-content: center;
+    justify-content: center;
 }
 
 .bookPrev{
@@ -55,8 +61,14 @@ and (max-width: 640px){
     justify-content: center;
     border-radius: 4px;
     box-shadow: 6px 6px 4px rgb(0 0 0 / 25%);
-    margin: 56px 140px;
+    margin: 56px 0;
     position: relative;
+}
+
+.inputButton{
+    display: flex;
+    width: 100%;
+    justify-content: end;
 }
 
 #fontsPreview p{
@@ -71,7 +83,23 @@ button{
     margin-top: 32px;
 }
 
-/*.spine{
-    position: relative;
-    right: 82px;
-}*/
+label[for="include_author"]{
+    display: inline;
+}
+
+
+@media screen 
+and (max-width: 889px){
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "title"
+        "cover"
+        "fonts"
+        "fontPrev";
+    }
+
+    .inputButton{
+    max-width: 600px;
+    }
+}
