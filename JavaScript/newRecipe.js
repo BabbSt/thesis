@@ -3,6 +3,27 @@ const ingredientSection=document.getElementById('newIngredients');
 const addDirectionStep=document.getElementById('addDirectionBtn');
 const DirectionsSection=document.getElementById('newDirections');
 
+const bookSelect = document.getElementById('book');
+const sectionSelect = document.getElementById('section');
+
+let newTitle = localStorage.getItem("title");
+if(newTitle){
+    let newOption = document.createElement("option");
+    newOption.text=newTitle;
+    newOption.setAttribute("selected","");
+    //console.log(newOption);
+    bookSelect.appendChild(newOption);
+}
+
+let newSection = localStorage.getItem("section");
+if(newSection){
+    let newOption = document.createElement("option");
+    newOption.text=newSection;
+    newOption.setAttribute("selected","");
+    //console.log(newOption);
+    sectionSelect.appendChild(newOption);
+}
+
 let ingredientCount = 1;
 
 addIngredient.addEventListener("click", ()=>{

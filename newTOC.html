@@ -15,13 +15,13 @@
             <button type="button" class="invertedButton" onclick="document.location='./bookshelf.html'">Cancel</button>
             <button type="button">Save</button>
         </div>
-        <h1>Easy Eats</h1>
+        <h1 id="bookTitle">Easy Eats</h1>
         <h2>Table of Contents</h2>
     </header>
     <main>
         <div class="addButtons">
             <button type="button" class="iconButton" command="show-modal" commandfor="addSectionModal">Add Section <span aria-hidden="true" class="material-symbols-outlined">add</span></button>
-            <button type="button" class="iconButton" onclick="document.location='./newRecipe.html'">Add Recipe <span aria-hidden="true" class="material-symbols-outlined">add</span></button>
+            <button type="button" class="iconButton" id="addRecipeGlobal">Add Recipe <span aria-hidden="true" class="material-symbols-outlined">add</span></button>
         </div>
         <dialog id="addSectionModal">
             <h2>Add new section</h2>

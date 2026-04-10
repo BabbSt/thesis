@@ -10,6 +10,8 @@ const subtitleInput = document.getElementById("subtitle");
 const bookTitle = document.getElementById("bookTitlePrev");
 const bookSubtitle = document.getElementById("bookSubtitlePrev");
 
+const form = document.getElementById("new_book");
+
 let fonts= ['Arial', 'Times New Roman','Helvetica', 'Impact'];
 
 let fontsdropdown = fonts.map((font)=>{
@@ -46,4 +48,10 @@ titleInput.addEventListener("keyup",()=>{
 
 subtitleInput.addEventListener("keyup",()=>{
     bookSubtitle.textContent=subtitleInput.value;
+})
+
+form.addEventListener("submit",()=>{
+    localStorage.setItem('title', titleInput.value.replace(/(^|\s)[a-z]/gi, l => l.toUpperCase()));
+    localStorage.setItem('subtitle',subtitleInput.value.replace(/(^|\s)[a-z]/gi, l => l.toUpperCase()));
+    localStorage.setItem('author',authorInput.value.replace(/(^|\s)[a-z]/gi, l => l.toUpperCase()));
 })
