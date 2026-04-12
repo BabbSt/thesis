@@ -55,6 +55,10 @@ globalRecipeBtn.addEventListener("click",()=>{
 });
 
 saveSectionBtn.addEventListener("click",()=>{
+	if(!sectionName.value){
+		//sectionName.setCustomValidity("Please fill out this field");
+		sectionName.reportValidity();
+	}else{
 	let newSection = document.createElement("section");
 	let startCaseSection = sectionName.value.replace(/(^|\s)[a-z]/gi, l => l.toUpperCase());
 	newSection.innerHTML = `<h3>${startCaseSection}</h3>`
@@ -77,7 +81,7 @@ saveSectionBtn.addEventListener("click",()=>{
 	})
 	//console.log(addRecipeBtn);
 	main.appendChild(newSection).appendChild(addRecipeBtn);
-	modal.close();
+	modal.close();}
 });
 
 saveBookBtn.addEventListener("click",()=>{
