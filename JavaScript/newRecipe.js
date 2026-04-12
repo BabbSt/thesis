@@ -15,6 +15,7 @@ const imageSelector = document.getElementById('image');
 
 let newBook = localStorage.getItem("newBook");
 let book;
+let selectedSection = localStorage.getItem("section");
 
 if(newBook){
     book = JSON.parse(newBook);
@@ -23,15 +24,14 @@ if(newBook){
     newOption.setAttribute("selected","");
     //console.log(newOption);
     bookSelect.appendChild(newOption);
-}
-
-let newSection = localStorage.getItem("section");
-if(newSection){
-    let newOption = document.createElement("option");
-    newOption.text=newSection;
-    newOption.setAttribute("selected","");
-    //console.log(newOption);
-    sectionSelect.appendChild(newOption);
+    book.sections.forEach((section)=>{
+        let newOption = document.createElement("option");
+        newOption.text=section.title;
+        if(section.title==selectedSection){
+            newOption.setAttribute("selected","");
+        }
+        sectionSelect.appendChild(newOption);
+    })
 }
 
 let ingredientCount = 1;
