@@ -17,6 +17,11 @@ if(book){
     }
     //console.log(recipe);
     h1.textContent=`${recipe.title}`;
+    if(recipe.imgPath){
+        let fig = document.createElement('figure');
+        fig.innerHTML=`<img src="${recipe.imgPath}" alt="image of completed recipe">`
+        main.appendChild(fig);
+    }
     if(recipe.description){
         let description = document.createElement("section");
         description.innerHTML = `<h2>Description</h2>
@@ -26,7 +31,11 @@ if(book){
     if(recipe.ingredients){
         let ingredients = document.createElement("section");
         let innerList = recipe.ingredients.map((ingredient)=>{
-            return `<li>${ingredient.amount+' '+ ingredient.unit+' '+ingredient.ingredient+' '+ingredient.note}</li>`
+            let ingredientString = ingredient.amount+' '+ ingredient.unit+' '+ingredient.ingredient;
+            if(ingredient.note){
+                ingredientString += (' - '+ingredient.note);
+            }
+            return `<li>${ingredientString}</li>`
         }).join('');
         ingredients.innerHTML = `<h2>Ingredients</h2><ul>${innerList}</ul>`;
         main.appendChild(ingredients);

@@ -9,8 +9,8 @@ const sectionSelect = document.getElementById('section');
 const recipeTitle = document.getElementById('title');
 const description = document.getElementById('description');
 const comments = document.getElementById('comments');
+const imageSelector = document.getElementById('image');
 
-console.log("test");
 //let newTitle = localStorage.getItem("title");
 
 let newBook = localStorage.getItem("newBook");
@@ -80,11 +80,13 @@ addDirectionStep.addEventListener("click",()=>{
     DirectionsSection.appendChild(newStepInput);
 });
 
+imageSelector.addEventListener("change",getImage);
+
 
 form.addEventListener("submit",()=>{
     let recipe = {
         title: recipeTitle.value.replace(/(^|\s)[a-z]/gi, l => l.toUpperCase()),
-        //imgPath: "",
+        imgPath: localStorage.getItem("imagePath"),
         description: description.value,
         ingredients: getIngredients(),
         steps: getSteps(),
@@ -101,6 +103,7 @@ form.addEventListener("submit",()=>{
     }
     //console.log(book);
     localStorage.setItem("newBook",JSON.stringify(book));
+    localStorage.removeItem("imagePath");
 })
 
 function getIngredients(){
@@ -127,4 +130,17 @@ function getSteps(){
         steps.push(input.value);
     })
     return steps;
+}
+
+function getImage(){
+    let image = imageSelector.files[0];
+    const reader = new FileReader();
+    let path;
+    reader.addEventListener('load', () => {
+        localStorage.setItem("imagePath", reader.result);
+    });
+
+    if (image) {
+        reader.readAsDataURL(image);
+    }
 }
