@@ -1,5 +1,5 @@
 const main = document.getElementsByTagName('main')[0];
-const h1 = document.getElementById("recipeTitle");
+const titleElements = document.querySelectorAll(".recipeTitle");
 const bookTitle = document.getElementById('bookTitle');
 
 let book = localStorage.getItem("currentBook");
@@ -16,7 +16,9 @@ if(book){
         recipe = currentBook.recipes[recipeIndex];
     }
     //console.log(recipe);
-    h1.textContent=`${recipe.title}`;
+    titleElements.forEach((element)=>{
+        element.textContent = currentBook.title;
+    });
     if(recipe.imgPath){
         let fig = document.createElement('figure');
         fig.innerHTML=`<img src="${recipe.imgPath}" alt="image of completed recipe">`

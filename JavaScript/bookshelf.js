@@ -16,7 +16,7 @@ if(books){
             buttonHTML +=  `<span>${booksArray[i].subtitle}</span>`
         }
         if(booksArray[i].author){
-            buttonHTML +=  `<span>By: ${booksArray[i].subtitle}</span>`
+            buttonHTML +=  `<span>By: ${booksArray[i].author}</span>`
         }
         button.innerHTML=buttonHTML;
         button.addEventListener("click",()=>{

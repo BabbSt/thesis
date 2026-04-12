@@ -2,13 +2,24 @@ const titleElements = document.querySelectorAll(".title");
 const container = document.getElementById("container");
 
 let book = localStorage.getItem("currentBook");
-
+localStorage.removeItem("currSectionIndex");
 if(book){
     let currentBook = JSON.parse(book);
 
     titleElements.forEach((element)=>{
         element.textContent = currentBook.title;
     });
+
+    let noSectionRecipes = document.createElement("ul");
+    currentBook.recipes.forEach((recipe, index)=>{
+         let listItem = document.createElement("li");
+            listItem.innerHTML = `<a href="./currentRecipe.html" class="iconLink">${recipe.title}<span aria-hidden="true" class="material-symbols-outlined">chevron_forward</span></a>`
+            listItem.addEventListener("click",()=>{
+                localStorage.setItem("currRecipeIndex", index);
+            });
+            noSectionRecipes.appendChild(listItem);
+    })
+    container.appendChild(noSectionRecipes);
 
     currentBook.sections.forEach((section, sIndex)=>{
         let sectionHTML = document.createElement('section');

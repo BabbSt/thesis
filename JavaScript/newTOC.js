@@ -15,6 +15,14 @@ if(newBook){
 	book = JSON.parse(newBook);
 	//console.log(book.title);
 	title.textContent=book.title;
+
+	let noSectionRecipes = document.createElement("ul");
+    let recipeList = book.recipes.map((recipe)=>{
+            return `<li><a href="#" class="iconLink">${recipe.title}<span aria-hidden="true" class="material-symbols-outlined">chevron_forward</span></a></li>`
+        }).join('');
+	noSectionRecipes.innerHTML = recipeList;
+    main.appendChild(noSectionRecipes);
+
 	book.sections.forEach((section)=>{
 		let newSection = document.createElement("section");
 		newSection.innerHTML = `<h3>${section.title}</h3>`;
