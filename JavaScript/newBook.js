@@ -9,6 +9,7 @@ const titleInput = document.getElementById("title");
 const subtitleInput = document.getElementById("subtitle");
 const bookTitle = document.getElementById("bookTitlePrev");
 const bookSubtitle = document.getElementById("bookSubtitlePrev");
+const bookAuthor = document.getElementById("bookAuthorPrev");
 
 const form = document.getElementById("new_book");
 
@@ -39,15 +40,23 @@ fontSelectors.forEach((selector)=>{
 
 includeAuthorCheck.addEventListener("input",()=>{
     authorInput.toggleAttribute("disabled");
-    console.log(authorInput);
+    if(includeAuthorCheck.checked && authorInput.value){
+        bookAuthor.textContent=`By: ${authorInput.value.replace(/(^|\s)[a-z]/gi, l => l.toUpperCase())}`;
+    }else{
+        bookAuthor.textContent="";
+    }
 })
 
 titleInput.addEventListener("keyup",()=>{
-    bookTitle.textContent=titleInput.value;
+    bookTitle.textContent=titleInput.value.replace(/(^|\s)[a-z]/gi, l => l.toUpperCase());
 })
 
 subtitleInput.addEventListener("keyup",()=>{
-    bookSubtitle.textContent=subtitleInput.value;
+    bookSubtitle.textContent=subtitleInput.value.replace(/(^|\s)[a-z]/gi, l => l.toUpperCase());
+})
+
+authorInput.addEventListener("keyup",()=>{
+    bookAuthor.textContent=`By: ${authorInput.value.replace(/(^|\s)[a-z]/gi, l => l.toUpperCase())}`;
 })
 
 form.addEventListener("submit",()=>{
