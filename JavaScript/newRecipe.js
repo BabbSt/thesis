@@ -3,13 +3,23 @@ const ingredientSection=document.getElementById('newIngredients');
 const addDirectionStep=document.getElementById('addDirectionBtn');
 const DirectionsSection=document.getElementById('newDirections');
 
+const form = document.getElementById('new_recipe');
 const bookSelect = document.getElementById('book');
 const sectionSelect = document.getElementById('section');
+const recipeTitle = document.getElementById('title');
+const description = document.getElementById('description');
+const comments = document.getElementById('comments');
 
-let newTitle = localStorage.getItem("title");
-if(newTitle){
+console.log("test");
+//let newTitle = localStorage.getItem("title");
+
+let newBook = localStorage.getItem("newBook");
+let book;
+
+if(newBook){
+    book = JSON.parse(newBook);
     let newOption = document.createElement("option");
-    newOption.text=newTitle;
+    newOption.text=book.title;
     newOption.setAttribute("selected","");
     //console.log(newOption);
     bookSelect.appendChild(newOption);
@@ -68,4 +78,53 @@ addDirectionStep.addEventListener("click",()=>{
 
     DirectionsSection.appendChild(newStepLabel);
     DirectionsSection.appendChild(newStepInput);
+});
+
+
+form.addEventListener("submit",()=>{
+    let recipe = {
+        title: recipeTitle.value.replace(/(^|\s)[a-z]/gi, l => l.toUpperCase()),
+        //imgPath: "",
+        description: description.value,
+        ingredients: getIngredients(),
+        steps: getSteps(),
+        comments: comments.value
+    }
+    if(sectionSelect.value=="Choose a section"){
+        book.recipes.push(recipe);
+    }else{
+        for(let i=0; i<book.sections.length; i++){
+            if(book.sections[i].title==sectionSelect.value){
+                book.sections[i].recipes.push(recipe);
+            }
+        }
+    }
+    //console.log(book);
+    localStorage.setItem("newBook",JSON.stringify(book));
 })
+
+function getIngredients(){
+    let ingFieldsets = document.querySelectorAll('.ingredientInputs'); 
+    let ingredients = [];
+    ingFieldsets.forEach((fieldset)=>{
+       let inputs =  fieldset.getElementsByTagName('input');
+       let ingredient = {
+        amount: inputs[0].value,
+        unit: inputs[1].value,
+        ingredient: inputs[2].value,
+        note: inputs[3].value,
+       }
+       ingredients.push(ingredient);
+    })
+    return ingredients;
+}
+
+function getSteps(){
+    let directions = document.getElementById("directions");
+    let steps = [];
+    let inputs =  directions.querySelectorAll('input');
+    inputs.forEach((input)=>{
+        steps.push(input.value);
+    })
+    return steps;
+}

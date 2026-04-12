@@ -51,7 +51,16 @@ subtitleInput.addEventListener("keyup",()=>{
 })
 
 form.addEventListener("submit",()=>{
-    localStorage.setItem('title', titleInput.value.replace(/(^|\s)[a-z]/gi, l => l.toUpperCase()));
+    /*localStorage.setItem('title', titleInput.value.replace(/(^|\s)[a-z]/gi, l => l.toUpperCase()));
     localStorage.setItem('subtitle',subtitleInput.value.replace(/(^|\s)[a-z]/gi, l => l.toUpperCase()));
-    localStorage.setItem('author',authorInput.value.replace(/(^|\s)[a-z]/gi, l => l.toUpperCase()));
+    localStorage.setItem('author',authorInput.value.replace(/(^|\s)[a-z]/gi, l => l.toUpperCase()));*/
+    let newBook = {
+        title: titleInput.value.replace(/(^|\s)[a-z]/gi, l => l.toUpperCase()),
+        subtitle: subtitleInput.value.replace(/(^|\s)[a-z]/gi, l => l.toUpperCase()),
+        author: authorInput.value.replace(/(^|\s)[a-z]/gi, l => l.toUpperCase()),
+        //fonts:[]
+        sections: [],
+        recipes: []
+    }
+    localStorage.setItem("newBook",JSON.stringify(newBook));
 })

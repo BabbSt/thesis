@@ -4,13 +4,41 @@ const sectionName = document.getElementById("sectionTitle");
 const modal = document.getElementById('addSectionModal');
 const title = document.getElementById('bookTitle');
 const globalRecipeBtn = document.getElementById('addRecipeGlobal');
+const saveBookBtn = document.getElementById('saveBtn');
 
 //console.log(localStorage.getItem("test"));
 
-let newTitle = localStorage.getItem("title");
+let newBook = localStorage.getItem("newBook");
+let book = "";
 
-if(newTitle){
-	title.textContent=newTitle;
+if(newBook){
+	book = JSON.parse(newBook);
+	//console.log(book.title);
+	title.textContent=book.title;
+	book.sections.forEach((section)=>{
+		let newSection = document.createElement("section");
+		newSection.innerHTML = `<h3>${section.title}</h3>`;
+
+		let recipes = document.createElement("ul");
+		let innerList = section.recipes.map((recipe)=>{
+            return `<li><a href="#" class="iconLink">${recipe.title}<span aria-hidden="true" class="material-symbols-outlined">chevron_forward</span></a></li>`
+        }).join('');
+		recipes.innerHTML=innerList;
+		//console.log(recipes);
+		
+		let addRecipeBtn = document.createElement("button");
+		addRecipeBtn.type="button"
+		addRecipeBtn.innerHTML = 'Add Recipe <span aria-hidden="true" class="material-symbols-outlined">add</span>'
+		addRecipeBtn.classList.add('iconButton');
+		addRecipeBtn.addEventListener('click',()=>{
+			localStorage.setItem("section",section.title);
+			document.location='./newRecipe.html';
+		});
+		main.appendChild(newSection).appendChild(recipes);
+		newSection.appendChild(addRecipeBtn);
+	});
+
+	//add logic for non section recipes
 }
 
 globalRecipeBtn.addEventListener("click",()=>{
@@ -22,6 +50,13 @@ saveSectionBtn.addEventListener("click",()=>{
 	let newSection = document.createElement("section");
 	let startCaseSection = sectionName.value.replace(/(^|\s)[a-z]/gi, l => l.toUpperCase());
 	newSection.innerHTML = `<h3>${startCaseSection}</h3>`
+	if(book){
+		book.sections.push({
+			title: startCaseSection,
+			recipes: []});
+		let jsonBook = JSON.stringify(book)
+		localStorage.setItem("newBook",jsonBook);
+	}
 	//console.log(newSection);
 	let addRecipeBtn = document.createElement("button");
 	addRecipeBtn.type="button"
@@ -35,6 +70,19 @@ saveSectionBtn.addEventListener("click",()=>{
 	//console.log(addRecipeBtn);
 	main.appendChild(newSection).appendChild(addRecipeBtn);
 	modal.close();
+});
+
+saveBookBtn.addEventListener("click",()=>{
+	let books = localStorage.getItem("booksArray");
+	let booksArray;
+	if(books){
+		booksArray = JSON.parse(books);
+		booksArray.push(book);
+	}else{
+		booksArray = [book];
+	}
+	localStorage.setItem("booksArray",JSON.stringify(booksArray));
+	document.location='./bookshelf.html';
 });
 
 /*old modal code

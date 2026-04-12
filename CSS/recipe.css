@@ -14,7 +14,7 @@ nav.open{
     left:0;
 }
 
-.navContent{
+#navContent{
     padding: 1em 2em;
     overflow-y: auto;
     max-height: 100%;
