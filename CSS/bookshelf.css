@@ -27,7 +27,7 @@
     border-radius: 4px;
     box-shadow: 6px 6px 4px rgb(0 0 0 / 25%);
     position: relative;
-    gap:1em;
+    gap:0.5em;
 }
 
 #yourBookHeading{
@@ -55,9 +55,10 @@ img{
     font-family: 'Allura';
     font-size: 32px;
     word-wrap: break-word;
-    width: 128px;
+    width: 150px;
     position: absolute;
     top: 62px;
+    left: 10px;
     line-height: 30px;
 }
 
@@ -75,12 +76,46 @@ img{
 }
 
 #cordially-invited{
+    color: crimson;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
     background-image: url(../Images/cordially\ invited\ bkgd\ expanded.jpg);
     background-size: contain;
 }
 
+#nerdy-nummies{
+    background-color: #e5e5e5;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+}
+
+#nerdy-nummies img{
+    width: 130px;
+    border-radius: 4px;
+}
+
+#nerdy-nummies .spine{
+    background-color: #CAC6C6;
+}
+
+#cordially-invited img{
+    width: 110px;
+    border-radius: 4px;
+}
+
+#cordially-invited .spine{
+    display: none;
+}
+
 #dillicious-recipes{
+    color:white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: large;
+    justify-content: start;
     background-image: url('../Images/pickle-soup-extended.jpg');
     background-size: contain;
-    align-content: start;
+}
+
+#dillicious-recipes .title{
+    margin-top: 30px;
 }

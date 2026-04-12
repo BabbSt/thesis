@@ -127,9 +127,9 @@ a{
 }
 
 .spine{
-    width: 2px;
+    width: 1px;
     height: 100%;
-    background-color: #CAC6C6;
+    background-color: #e6e6e6;
     position: absolute;
     left: 10px;
 }
