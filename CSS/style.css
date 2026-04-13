@@ -103,6 +103,7 @@ span.material-symbols-outlined{
     align-items: center;
     justify-content: center;
     height: fit-content;
+    padding: 4px 6px 4px 12px;
 }
 
 .popoverButton{
@@ -161,14 +162,13 @@ input[type="text"], select{
 }
 
 dialog{
-    min-width: 600px;
+    width: 600px;
 }
 
 @media screen 
 and (max-width: 600px){
     dialog{
-        min-width: 0;
-        max-width: 100%;
+        width: 100%;
     }
 }
 
