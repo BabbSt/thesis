@@ -15,21 +15,26 @@
     <header>
         <h1 class="title">title</h1>
         <h2>Table of Contents</h2>
+        <search>
+            <form role="search">
+                <input type="text" placeholder="Search">
+            </form>
+        </search>
         <a href="./bookshelf.html" class="iconButton" id="bookshelfLink"><span aria-hidden="true" class="material-symbols-outlined">chevron_backward</span>Bookshelf</a>
     </header>
     <main>
-        <button type="button" id="toggleMenu" popovertarget="menu" class="menuButton"><span class="material-symbols-outlined">more_horiz</span></button>
+        <button type="button" id="toggleMenu" popovertarget="menu" class="menuButton" aria-label="Toggle Menu"><span class="material-symbols-outlined">more_horiz</span></button>
         <menu id="menu" popover>
             <li><button class="menuButton popoverButton">Edit Cover <span aria-hidden="true" class="material-symbols-outlined">book_2</span></button></li>
             <li><button class="menuButton popoverButton">Edit Content <span aria-hidden="true" class="material-symbols-outlined">edit_note</span></button></li>
             <li><button class="menuButton popoverButton" command="show-modal" commandfor="shareModal">Share <span aria-hidden="true" class="material-symbols-outlined">upload</span></button></li>
         </menu>
-        <search id="container">
-            <input type="search" placeholder="Search">
-        </search>
-        <dialog id="shareModal">
-            <h3 class="title">title</h3>
-            <fieldset id="accessSelect">
+        <div id="container">
+        </div>
+        <dialog id="shareModal" closedby="any">
+            <button aria-label="close modal" class="menuButton closeButton" command="close" commandfor="shareModal"><span class="material-symbols-outlined">close</span></button>
+            <h3>Share Smith Family Recipes</h3>
+            <fieldset id="accessRadios">
                 <legend>Access</legend>
                 <ul>
                     <li>
@@ -42,50 +47,66 @@
                     </li>
                 </ul>
             </fieldset>
-            <div class="searchContainer show">
+            <search class="searchContainer show">
                 <label for="searchContacts">Share with your contacts</label>
                 <input type="text" id="searchContacts" name="searchContacts" placeholder="Enter email or contact name">
-                <div id="results" class="hidden">
-                </div>
-            </div>
+                <section id="results">
+                </section>
+            </search>
             <!--Ask if this is the best way to handle these, no use anchor-->
-            <div class="recentContacts">
-                <button type="button" class="account_btn">
-                    <img aria-hidden="true" class="account_img" src="./Images/AIcon.png">
+            <section id="recentContacts">
+            <h4>Recent Contacts</h4>
+                <ul id="avatarButtons">
+                <li><button type="button" class="account_btn">
+                    <img aria-hidden="true" class="account_img" src="./Images/avatars/dad man.jpg">
                     Anthony
-                </button>
-                <button type="button" class="account_btn" id="susan">
-                    <img aria-hidden="true" class="account_img" src="./Images/SIcon.png">
+                </button></li>
+                <li><button type="button" class="account_btn" id="susan">
+                    <img aria-hidden="true" class="account_img" src="./Images/avatars/mom woman.png">
                     Susan
-                </button>
-                <button type="button" class="account_btn">
-                    <img aria-hidden="true" class="account_img" src="./Images/CIcon.png">
+                </button></li>
+                <li><button type="button" class="account_btn">
+                    <img aria-hidden="true" class="account_img" src="./Images/avatars/woman.jpg">
                     Carly
-                </button>
-            </div>
-            <button type="button">Copy Link <span aria-hidden="true" class="material-symbols-outlined">link_2</span></button>
+                </button></li>
+            </ul>
+            </section>
+            <button type="button" class="iconButton">Copy Link <span aria-hidden="true" class="material-symbols-outlined">link_2</span></button>
         </dialog>
-        <dialog id="shareDetailsModal">
+        <dialog id="shareDetailsModal" closedby="any">
+            <button aria-label="close modal" class="menuButton closeButton" command="close" commandfor="shareDetailsModal"><span class="material-symbols-outlined">close</span></button>
             <form>
-                <h3 class="title">title</h3>
+                <h3>Share Smith Family Recipes</h3>
                 <p>With</p>
-                <img class="account_img" src="./Images/SIcon.png">
-                <!--Does this need a semantic lable?-->
-                <select id="accessSelect" name="access">
-                    <option value="view">View</option>
-                    <option value="edit">Edit</option>
-                </select>
+                <div class="shareDetails">
+                    <img aria-hidden="true" class="account_img" src="./Images/SIcon.png">
+                    <p class="contactName">Susan Marcus</p>
+                    <!--Does this need a semantic lable?-->
+                    <select id="accessSelect" name="access">
+                        <option value="view">View</option>
+                        <option value="edit">Edit</option>
+                    </select>
+                </div>
                 <label for="shareMessage">Message</label>
                 <textarea id="shareMessage" name="shareMessage"></textarea>
-                <button type="button" id="submitShare">Share <span aria-hidden="true" class="material-symbols-outlined">send</span></button>
+                <div class="frmSubCan">
+                    <button type="button" id="submitShare" class="iconButton">Send <span aria-hidden="true" class="material-symbols-outlined">send</span></button>
+                </div>
             </form> 
         </dialog>
-        <dialog id="confirmShare">
-            <img class="account_img" src="./Images/SIcon.png">
-            <p>Susan</p>
-            <p>can now edit</p>
-            <p class="title">title</p>
-            <button type="button" id="doneSharing">Done</button>
+        <dialog id="confirmShare" closedby="any">
+            <button aria-label="close modal" class="menuButton closeButton" command="close" commandfor="confirmShare"><span class="material-symbols-outlined">close</span></button>
+            <div id="confirmShareContent">
+                <div class="shareDetails">
+                    <img aria-hidden="true" class="account_img" src="./Images/SIcon.png">
+                    <p class="contactName">Susan</p>
+                </div>
+                <p>can now edit</p>
+                <p>Smith Family Recipes</p>
+            </div>
+            <div class="frmSubCan">
+                <button type="button" id="doneSharing">Done</button>
+            </div>
         </dialog>
     </main>
 </body>

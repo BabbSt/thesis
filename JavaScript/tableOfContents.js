@@ -1,6 +1,7 @@
 const shareModal = document.getElementById("shareModal");
 const shareDetailsModal = document.getElementById("shareDetailsModal");
 const confirmShare = document.getElementById("confirmShare");
+const contactNameElements = document.querySelectorAll(".contactName");
 
 function openModal (modal){
 	modal.showModal();
@@ -51,14 +52,27 @@ searchInput.addEventListener("keyup",(e)=>{
         })
         //console.log(results);
     }
-    if(!results){
-        resultsWrapper.classList.add("hidden");
-    }else{
-        let content = results.map((result)=>{
-            return `<li>${result}</li>`
-        }).join('');
-
-        resultsWrapper.classList.remove("hidden");
-        resultsWrapper.innerHTML = `<ul>${content}</ul>`;
+    if(resultsWrapper.firstChild){
+            resultsWrapper.removeChild(resultsWrapper.firstChild);
+        }
+    if(results.length>0){   
+        let resultsList = document.createElement("ul");
+        results.forEach((result)=>{
+            let listItem = document.createElement('li');
+            let button = document.createElement('button');
+            button.type = "button"
+            button.classList.add("linkButton");
+            button.textContent = result;
+            button.addEventListener('click',()=>{
+                    closeModal(shareModal);
+                    contactNameElements.forEach((element)=>{
+                        element.textContent=result;
+                    });
+                    openModal(shareDetailsModal);
+            });
+            resultsList.appendChild(listItem).appendChild(button);
+        });
+        resultsWrapper.appendChild(resultsList);
     }
 })
+
