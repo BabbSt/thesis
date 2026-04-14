@@ -65,13 +65,17 @@ main{
     border-radius: 8px;
     position: absolute;
     inset: unset;
-    top:39px;
-    right: 3px;
+    top:48px;
+    right: 8px;
     display: flex;
     flex-direction: column;
     gap: 0.5em;
     padding: 0.5em 0.5em;
     width: 220px;
+}
+
+#menu button{
+    color: #272727;
 }
 
 button{
