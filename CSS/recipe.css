@@ -4,7 +4,8 @@
     font-weight: 700;
     padding: 4px;
     position: absolute; /**don't use anymore expect for this and hamburger nav, not responsive**/
-    transform: translateY(-200%);/*out of view*/
+    left: 80px;
+    transform: translateY(-300%);/*out of view*/
     transition: transform 0.3s;
 }
 
@@ -18,7 +19,7 @@ nav{
     top:0;
     left: -180%;
     height: 100%;
-    width: 20em;
+    width: 22em;
     max-width: 100%;
     transition: all 0.3s;
     border-right: 1px solid #272727;
@@ -45,20 +46,26 @@ nav.open{
   background-color: rgba(0, 0, 0, 0.85);
 }
 
-nav ul{
-    list-style: none;
-}
-nav li{
-    margin-bottom: 16px;
-}
-
 nav h2{
     font-size: 40px;
     font-weight: 700;
+    line-height: 48px;
+    margin-top: 44px;
+    margin-bottom: 0;
 }
 
 nav h3{
     font-weight: 600;
+    margin-top: 16px;
+    margin-bottom: 0;
+}
+
+nav ul{
+    list-style: none;
+    margin-top: 16px;
+}
+nav li{
+    margin-bottom: 16px;
 }
 
 .toggleNav{
@@ -78,14 +85,6 @@ nav h3{
 summary{
     font-size: 32px;
     font-weight: 600;
-}
-
-.closeNav{
-    position: absolute;
-    top:5px;
-    right: 0px;
-    justify-self: end;
-    padding-right: 2px;
 }
 
 img{
