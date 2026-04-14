@@ -2,6 +2,10 @@ const shareModal = document.getElementById("shareModal");
 const shareDetailsModal = document.getElementById("shareDetailsModal");
 const confirmShare = document.getElementById("confirmShare");
 const contactNameElements = document.querySelectorAll(".contactName");
+const accessRadios = document.getElementById('accessRadios');
+const accessSelect = document.getElementById('accessSelect');
+const accessText = document.getElementById('accessText');
+//clear message input when modal closes
 
 function openModal (modal){
 	modal.showModal();
@@ -12,7 +16,16 @@ function closeModal (modal){
     //clear values
 }
 
-//const account = document.getElementsByClassName("account_btn");
+accessRadios.addEventListener('change',()=>{
+    let access = document.querySelector('input[name=accessRadio]:checked');
+    //console.log(access.value);
+    accessSelect.value = access.value;
+    accessText.textContent = access.value;
+});
+
+accessSelect.addEventListener('change', ()=>{
+    accessText.textContent = accessSelect.value;
+})
 
 const susanButton = document.getElementById("susan");
 susanButton.addEventListener("click",()=>{
