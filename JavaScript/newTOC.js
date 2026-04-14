@@ -18,7 +18,12 @@ if(newBook){
 
 	let noSectionRecipes = document.createElement("ul");
     let recipeList = book.recipes.map((recipe)=>{
-            return `<li><a href="#" class="iconLink">${recipe.title}<span aria-hidden="true" class="material-symbols-outlined">chevron_forward</span></a></li>`
+            return `<li class="iconLink">${recipe.title}
+			<div class="editClose">
+			<a href="#"><span aria-hidden="true" class="material-symbols-outlined">edit</span></a>
+			<button aria-label="Delete" class="menuButton"><span aria-hidden="true" class="material-symbols-outlined">close</span></button>
+			</div>
+			</li>`
         }).join('');
 	noSectionRecipes.innerHTML = recipeList;
     main.appendChild(noSectionRecipes);
@@ -29,7 +34,12 @@ if(newBook){
 
 		let recipes = document.createElement("ul");
 		let innerList = section.recipes.map((recipe)=>{
-            return `<li><a href="#" class="iconLink">${recipe.title}<span aria-hidden="true" class="material-symbols-outlined">chevron_forward</span></a></li>`
+            return `<li class="iconLink">${recipe.title}
+			<div class="editClose">
+			<a href="#"><span aria-hidden="true" class="material-symbols-outlined">edit</span></a>
+			<button aria-label="Delete" class="menuButton"><span aria-hidden="true" class="material-symbols-outlined">close</span></button>
+			</div>
+			</li>`
         }).join('');
 		recipes.innerHTML=innerList;
 		//console.log(recipes);
@@ -73,7 +83,7 @@ saveSectionBtn.addEventListener("click",()=>{
 	let addRecipeBtn = document.createElement("button");
 	addRecipeBtn.type="button"
 	addRecipeBtn.innerHTML = 'Add Recipe <span aria-hidden="true" class="material-symbols-outlined">add</span>'
-	addRecipeBtn.classList.add('iconButton');
+	addRecipeBtn.classList.add('iconButton','sectionAddRecipe');
 	//addRecipeBtn.setAttribute("onclick","document.location='./newRecipe.html'");
 	addRecipeBtn.addEventListener('click',()=>{
 		localStorage.setItem("section",startCaseSection);
