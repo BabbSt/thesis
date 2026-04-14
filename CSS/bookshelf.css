@@ -33,6 +33,7 @@
 #yourBookHeading{
     display: flex;
     height: fit-content;
+    align-items: center;
     gap: 24px;
     margin-bottom: 26px;
 }
@@ -48,7 +49,7 @@ img{
 
 #smith-family-recipes{
     background-image: url('../Images/BettyCrocker\ green.jpg');
-    background-size: contain;
+    background-size: cover;
 }
 
 #smith-family-recipes .title{
@@ -57,8 +58,8 @@ img{
     word-wrap: break-word;
     width: 150px;
     position: absolute;
-    top: 62px;
-    left: 10px;
+    top: 64px;
+    left: 16px;
     line-height: 30px;
 }
 
