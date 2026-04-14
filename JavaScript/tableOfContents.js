@@ -5,7 +5,9 @@ const contactNameElements = document.querySelectorAll(".contactName");
 const accessRadios = document.getElementById('accessRadios');
 const accessSelect = document.getElementById('accessSelect');
 const accessText = document.getElementById('accessText');
-//clear message input when modal closes
+const viewRadio = document.getElementById('view');
+const editRadio = document.getElementById('edit');
+const shareMessage = document.getElementById('shareMessage');
 
 function openModal (modal){
 	modal.showModal();
@@ -41,7 +43,14 @@ submitShareButton.addEventListener("click",()=>{
 });
 
 const doneSharingButton = document.getElementById("doneSharing");
-doneSharingButton.addEventListener("click",()=>{closeModal(confirmShare);});
+doneSharingButton.addEventListener("click",()=>{
+    closeModal(confirmShare);
+    editRadio.checked = false;
+    viewRadio.checked = true;
+    accessSelect.value = 'view';
+    accessText.textContent = 'view';
+    shareMessage.value = '';
+});
 
 let contacts = [
     'Sam',
