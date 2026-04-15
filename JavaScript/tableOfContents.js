@@ -53,10 +53,10 @@ doneSharingButton.addEventListener("click",()=>{
 });
 
 let contacts = [
-    'Sam',
-    'Susan',
-    'Sunny',
-    'Stu'
+    'Sam Smith',
+    'Susan Marcus',
+    'Sunny Monroe',
+    'Stu Pickles'
 ]
 
 const searchInput=document.getElementById("searchContacts");

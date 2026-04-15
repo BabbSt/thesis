@@ -126,6 +126,10 @@ search ul{
     border-radius: 8px;
 }
 
+#results ul{
+    padding-left: 1em;
+}
+
 dialog{
     padding-bottom: 16px;
 }

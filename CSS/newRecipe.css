@@ -59,6 +59,10 @@ select{
     width:12em;
 }
 
+#image{
+    margin-bottom: 48px;
+}
+
 
 @media screen 
 and (max-width: 828px){
