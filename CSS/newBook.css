@@ -93,6 +93,14 @@ button{
 
 label[for="include_author"]{
     display: inline;
+    font-weight: 400;
+    font-family: 'Inter';
+}
+
+input[type="checkbox"]{
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
 }
 
 
