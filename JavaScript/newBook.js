@@ -13,7 +13,7 @@ const bookAuthor = document.getElementById("bookAuthorPrev");
 
 const form = document.getElementById("new_book");
 
-let fonts= ['Arial', 'Times New Roman','Helvetica', 'Impact'];
+let fonts= ['Arial', 'Impact', 'Inter', 'Times New Roman',];
 
 let fontsdropdown = fonts.map((font)=>{
     return `<option style="font-family: ${font};">${font}</option>`
