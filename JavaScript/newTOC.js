@@ -14,7 +14,13 @@ let book = "";
 if(newBook){
 	book = JSON.parse(newBook);
 	//console.log(book.title);
+
+	title.setAttribute('style',`font-family: ${book.fonts[0]};`);
 	title.textContent=book.title;
+
+	document.getElementsByTagName('h2')[0].setAttribute('style',`font-family: ${book.fonts[1]};`);
+	
+	main.setAttribute('style',`font-family: ${book.fonts[2]};`);
 
 	let noSectionRecipes = document.createElement("ul");
     let recipeList = book.recipes.map((recipe)=>{
@@ -30,7 +36,7 @@ if(newBook){
 
 	book.sections.forEach((section)=>{
 		let newSection = document.createElement("section");
-		newSection.innerHTML = `<h3>${section.title}</h3>`;
+		newSection.innerHTML = `<h3 style='font-family: ${book.fonts[1]}'>${section.title}</h3>`;
 
 		let recipes = document.createElement("ul");
 		let innerList = section.recipes.map((recipe)=>{
@@ -71,7 +77,7 @@ saveSectionBtn.addEventListener("click",()=>{
 	}else{
 	let newSection = document.createElement("section");
 	let startCaseSection = sectionName.value.replace(/(^|\s)[a-z]/gi, l => l.toUpperCase());
-	newSection.innerHTML = `<h3>${startCaseSection}</h3>`
+	newSection.innerHTML = `<h3 style='font-family: ${book.fonts[1]}'>${startCaseSection}</h3>`
 	if(book){
 		book.sections.push({
 			title: startCaseSection,

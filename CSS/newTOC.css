@@ -17,6 +17,13 @@ h2{
     margin-top: 8px;
 }
 
+dialog h3{
+    margin-top: 8px;
+    font-size: xx-large;
+    font-weight: 600;
+    text-align: center;
+}
+
 section h3{
     margin-bottom: 0;
 }

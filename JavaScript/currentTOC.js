@@ -6,6 +6,10 @@ localStorage.removeItem("currSectionIndex");
 if(book){
     let currentBook = JSON.parse(book);
 
+    document.getElementsByTagName('h1')[0].setAttribute('style',`font-family: ${currentBook.fonts[0]};`);
+    document.getElementsByTagName('h2')[0].setAttribute('style',`font-family: ${currentBook.fonts[1]};`);
+    container.setAttribute('style',`font-family: ${currentBook.fonts[2]};`);
+
     titleElements.forEach((element)=>{
         element.textContent = currentBook.title;
     });
@@ -23,7 +27,7 @@ if(book){
 
     currentBook.sections.forEach((section, sIndex)=>{
         let sectionHTML = document.createElement('section');
-        sectionHTML.innerHTML=`<h3>${section.title}</h3>`
+        sectionHTML.innerHTML=`<h3 style='font-family: ${currentBook.fonts[1]}'>${section.title}</h3>`
 
         let recipes = document.createElement("ul");
 		/*let innerList = section.recipes.map((recipe)=>{

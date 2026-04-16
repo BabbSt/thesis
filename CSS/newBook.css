@@ -28,13 +28,14 @@ input[type="text"], select{
 }
 
 #titlePrev{
-    font-size: 2em;
-    font-weight: 700;
+    font-weight: 400;
+    font-size: xxx-large;
     margin-bottom: 0.5em;
+    margin-top: 0.4em;
 }
 
 #headerPrev{
-    font-size: 1.5em;
+    font-size: xx-large;
     font-weight: 600;
 }
 
@@ -88,6 +89,7 @@ input[type="text"], select{
 
 #bodyPrev{
     margin-bottom: 56px;
+    margin-top: 48px;
 }
 
 button{

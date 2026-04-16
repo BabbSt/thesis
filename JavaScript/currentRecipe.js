@@ -10,6 +10,8 @@ if(book){
     let recipe;
     let recipeIndex = localStorage.getItem('currRecipeIndex');
 
+    main.setAttribute('style',`font-family: ${currentBook.fonts[2]};`);
+
     if(sectionIndex){
         recipe = currentBook.sections[sectionIndex].recipes[recipeIndex];
     }else{
@@ -26,7 +28,7 @@ if(book){
     }
     if(recipe.description){
         let description = document.createElement("section");
-        description.innerHTML = `<h2>Description</h2>
+        description.innerHTML = `<h2 style='font-family: ${currentBook.fonts[1]}'>Description</h2>
             <p>${recipe.description}</p>`;
         main.appendChild(description);
     }
@@ -39,7 +41,7 @@ if(book){
             }
             return `<li>${ingredientString}</li>`
         }).join('');
-        ingredients.innerHTML = `<h2>Ingredients</h2><ul>${innerList}</ul>`;
+        ingredients.innerHTML = `<h2 style='font-family: ${currentBook.fonts[1]}'>Ingredients</h2><ul>${innerList}</ul>`;
         main.appendChild(ingredients);
     }
     if(recipe.steps){
@@ -47,12 +49,12 @@ if(book){
         let innerList = recipe.steps.map((step)=>{
             return `<li>${step}</li>`
         }).join('');
-        directions.innerHTML = `<h2>Directions</h2><ol>${innerList}</ol>`;
+        directions.innerHTML = `<h2 style='font-family: ${currentBook.fonts[1]}'>Directions</h2><ol>${innerList}</ol>`;
         main.appendChild(directions);
     }
     if(recipe.comments){
         let comments = document.createElement("section");
-        comments.innerHTML = `<h2>Closing Comments</h2>
+        comments.innerHTML = `<h2 style='font-family: ${currentBook.fonts[1]}'>Closing Comments</h2>
             <p>${recipe.comments}</p>`;
         main.appendChild(comments);
     }
@@ -71,7 +73,7 @@ if(book){
         let recipes = document.createElement("ul");
         section.recipes.forEach((recipe, rIndex)=>{
             let listItem = document.createElement("li");
-            listItem.innerHTML = `<a href="./currentRecipe.html" class="iconLink">${recipe.title}<span aria-hidden="true" class="material-symbols-outlined">chevron_forward</span></a>`
+            listItem.innerHTML = `<a href="./currentRecipe.html">${recipe.title}</a>`
             listItem.addEventListener("click",()=>{
                 localStorage.setItem("currSectionIndex", sIndex);
                 localStorage.setItem("currRecipeIndex", rIndex);

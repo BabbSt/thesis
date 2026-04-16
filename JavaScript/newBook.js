@@ -13,26 +13,43 @@ const bookAuthor = document.getElementById("bookAuthorPrev");
 
 const form = document.getElementById("new_book");
 
-let fonts= ['Arial', 'Impact', 'Inter', 'Times New Roman',];
+let fonts= ['DM Serif Display', 'Inter', 'Plus Jakarta Sans', 'Times New Roman',];
 
 let fontsdropdown = fonts.map((font)=>{
     return `<option style="font-family: ${font};">${font}</option>`
 }).join('');
 
+let selectedFonts = ['DM Serif Display','Plus Jakarta Sans','Inter'];
 fontSelectors.forEach((selector)=>{
     selector.innerHTML= fontsdropdown;
+    switch(selector.id){
+        case "title_font":
+            titleFont.setAttribute('style',"font-family:'DM Serif Display'");
+            selector.value= 'DM Serif Display';
+            break;
+        case "heading_font":
+            headerFont.setAttribute('style',"font-family:'Plus Jakarta Sans'");
+            selector.value= 'Plus Jakarta Sans';
+            break;
+        case "body_font":
+            selector.value= 'Inter';
+            break;
+    }
     selector.addEventListener("input",()=>{
         //console.log(selector.value);
         selector.setAttribute('style',`font-family: ${selector.value};`);
         switch(selector.id){
             case "title_font":
                 titleFont.setAttribute('style',`font-family: ${selector.value};`);
+                selectedFonts[0] = selector.value;
                 break;
             case "heading_font":
                 headerFont.setAttribute('style',`font-family: ${selector.value};`);
+                selectedFonts[1] = selector.value;
                 break;
             case "body_font":
                 bodyFont.setAttribute('style',`font-family: ${selector.value};`);
+                selectedFonts[2] = selector.value;
                 break;
         }
     })
@@ -67,7 +84,7 @@ form.addEventListener("submit",()=>{
         title: titleInput.value.replace(/(^|\s)[a-z]/gi, l => l.toUpperCase()),
         subtitle: subtitleInput.value.replace(/(^|\s)[a-z]/gi, l => l.toUpperCase()),
         author: authorInput.value.replace(/(^|\s)[a-z]/gi, l => l.toUpperCase()),
-        //fonts:[]
+        fonts:selectedFonts,
         sections: [],
         recipes: []
     }
