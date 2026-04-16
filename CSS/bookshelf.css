@@ -42,6 +42,10 @@
     margin: 0;
 }
 
+#shared h2{
+    margin-top: 56px;
+}
+
 /*Book cover styling*/
 img{
     max-width: 100%;
