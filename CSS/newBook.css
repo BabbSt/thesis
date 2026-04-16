@@ -124,4 +124,8 @@ and (max-width: 889px){
     .inputButton{
     max-width: 600px;
     }
+
+    #bookInput{
+        margin:0;
+    }
 }

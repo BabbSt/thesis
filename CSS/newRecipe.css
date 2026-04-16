@@ -71,6 +71,10 @@ select{
     margin-top: 16px;
 }
 
+#detailsHeading{
+    margin-bottom: 0;
+}
+
 
 @media screen 
 and (max-width: 828px){
