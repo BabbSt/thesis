@@ -44,6 +44,10 @@ label[for="edit"]{
     display: inline;
 }
 
+label[for="shareMessage"]{
+    margin: 0;
+}
+
 fieldset{
     padding: 0;
     margin: 0;

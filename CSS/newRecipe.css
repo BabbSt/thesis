@@ -35,6 +35,10 @@ button{
     max-width: 100%;
 }
 
+.ingredientInputs div{
+    margin-top: 8px;
+}
+
 input{
     width: 98%;
     max-width: 100%;
@@ -63,6 +67,10 @@ select{
     margin-bottom: 48px;
 }
 
+#newDirections label{
+    margin-top: 16px;
+}
+
 
 @media screen 
 and (max-width: 828px){
@@ -81,9 +89,14 @@ and (max-width: 828px){
 }
 
 @media screen 
-and (max-width: 912px){
-    #ingredientInputs{
+and (max-width: 935px){
+    .ingredientInputs{
         justify-content: start;
         gap: 16px;
+        margin-bottom: 48px;
 }
+    #addIngredientBtn,
+    #addDirectionBtn{
+        margin-right: 16px;
+    }
 }
