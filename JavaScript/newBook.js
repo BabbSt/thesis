@@ -26,10 +26,12 @@ fontSelectors.forEach((selector)=>{
         case "title_font":
             titleFont.setAttribute('style',"font-family:'DM Serif Display'");
             selector.value= 'DM Serif Display';
+            selector.setAttribute('style',"font-family:'DM Serif Display'");
             break;
         case "heading_font":
             headerFont.setAttribute('style',"font-family:'Plus Jakarta Sans'");
             selector.value= 'Plus Jakarta Sans';
+            selector.setAttribute('style',"font-family:'Plus Jakarta Sans'");
             break;
         case "body_font":
             selector.value= 'Inter';
