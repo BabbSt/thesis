@@ -8,6 +8,8 @@ const accessText = document.getElementById('accessText');
 const viewRadio = document.getElementById('view');
 const editRadio = document.getElementById('edit');
 const shareMessage = document.getElementById('shareMessage');
+const searchInput=document.getElementById("searchContacts");
+const resultsWrapper=document.getElementById("results");
 
 function openModal (modal){
 	modal.showModal();
@@ -50,6 +52,10 @@ doneSharingButton.addEventListener("click",()=>{
     accessSelect.value = 'view';
     accessText.textContent = 'view';
     shareMessage.value = '';
+    searchInput.value = '';
+    if(resultsWrapper.firstChild){
+            resultsWrapper.removeChild(resultsWrapper.firstChild);
+    }
 });
 
 let contacts = [
@@ -59,8 +65,8 @@ let contacts = [
     'Stu Pickles'
 ]
 
-const searchInput=document.getElementById("searchContacts");
-const resultsWrapper=document.getElementById("results");
+
+
 
 searchInput.addEventListener("keyup",(e)=>{
     //console.log(e.target.value);
